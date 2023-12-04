@@ -4294,8 +4294,8 @@ body {
   .layout-pars__img img {
     position: absolute;
     left: 60%;
-    top: -35px;
-    height: 175px;
+    top: -15px;
+    height: 105px;
     -webkit-transform: rotate(-20deg);
         -ms-transform: rotate(-20deg);
             transform: rotate(-20deg);
@@ -4817,12 +4817,12 @@ body {
   }
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 456px) {
   .layout-pars__img img {
     position: absolute;
     left: 60%;
-    top: -35px;
-    height: 248px;
+    top: -25px;
+    height: 186px;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
