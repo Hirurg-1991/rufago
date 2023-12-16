@@ -5,7 +5,7 @@ var htop = document.querySelector(".header__top");
 burger.addEventListener("click", function (e) {
   burger.classList.toggle("active");
   htop.classList.toggle("active");
-  console.log(document.querySelector("body") + "121");
+
   document.querySelector("body").classList.toggle("no-scroll");
 });
 //////////////////////////////////$RECYCLE.BIN
@@ -44,7 +44,6 @@ function moveElement() {
   }
 
   if (window.innerWidth <= 1199.98) {
-    // Если ширина экрана <= 768px, перемещаем первый элемент в следующий блок
     if (top.contains(description)) {
       top.removeChild(description);
       bottom.appendChild(description);
@@ -91,14 +90,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.innerWidth <= 991) {
+    var asideItems = document.querySelectorAll("._aside-item");
+
+    asideItems.forEach(function (item) {
+      var header = item.querySelector("._aside-title");
+      var content = item.querySelector("._aside-body");
+
+      header.addEventListener("click", function () {
+        content.classList.toggle("active");
+        header.classList.toggle("active");
+        header.parentNode.classList.toggle("active");
+      });
+    });
+  }
+});
 
 ////////////////////////////////////$RECYCLE.BIN
 
 function initSliders() {
   if (document.querySelector(".layout-slider__slider")) {
-    let popular;
     var item = document.querySelector(".layout-slider");
-    popular = new Swiper(".layout-slider__slider", {
+    let popular2 = new Swiper(".layout-slider__slider", {
       loop: true,
       spaceBetween: 20,
       slidesPerView: 6,
@@ -153,13 +167,12 @@ function initSliders() {
   if (document.querySelector(".layout-robota__slider")) {
     function initializeSwiper() {
       var screenWidth = window.innerWidth;
-      let popular;
 
       if (screenWidth < 768) {
         //location.reload();
         //   popular.destroy(true, true);
-
-        popular = new Swiper(".layout-robota__slider", {
+        let popular3;
+        popular3 = new Swiper(".layout-robota__slider", {
           loop: true,
           spaceBetween: 20,
           slidesPerView: 1,
@@ -200,13 +213,12 @@ function initSliders() {
   if (document.querySelector(".layout-services__slider")) {
     function initializeSwip() {
       var screenWidth = window.innerWidth;
-      let popular;
 
       if (screenWidth <= 992) {
         //location.reload();
         //   popular.destroy(true, true);
-
-        popular = new Swiper(".layout-services__slider", {
+        let popular4;
+        popular4 = new Swiper(".layout-services__slider", {
           loop: true,
 
           // centeredSlides: true,
@@ -239,6 +251,56 @@ function initSliders() {
 
     window.addEventListener("resize", initializeSwip);
     initializeSwip();
+  }
+  var forswiper = document.querySelector(".post-slider__slider");
+  if (forswiper) {
+    var swiper = new Swiper(forswiper, {
+      spaceBetween: 30,
+      // loop: true,
+      // autoplay: {
+      //   delay: 2500,
+      //   disableOnInteraction: false,
+      // },
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+      },
+      slidesPerView: 1,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+
+        991: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 100,
+        },
+      },
+      navigation: {
+        nextEl: ".post-slider__next",
+        prevEl: ".post-slider__prev",
+      },
+    });
+    // const swiperPrev = document.querySelector(".post-slider__prev");
+    // const swiperNext = document.querySelector(".post-slider__next");
+
+    // swiperPrev.addEventListener("click", () => {
+    //   swiper.slidePrev();
+    // });
+    // swiperNext.addEventListener("click", () => {
+    //   swiper.slideNext();
+    // });
   }
 }
 window.addEventListener("load", function (e) {
@@ -354,13 +416,11 @@ if ((bottom = document.querySelector(".layout-legality__content"))) {
     var top = document.querySelector(".layout-legality__wrap");
 
     if (window.innerWidth <= 1199.98) {
-      // Если ширина экрана <= 768px, перемещаем первый элемент в следующий блок
       if (!bottom.contains(description)) {
         top.removeChild(description);
         bottom.appendChild(description);
       }
     } else if (window.innerWidth > 1199.98) {
-      // Если ширина экрана > 768px, перемещаем второй элемент в предыдущий блок
       if (bottom.contains(description)) {
         bottom.removeChild(description);
         top.appendChild(description);
@@ -377,13 +437,11 @@ if (document.querySelector(".layout-example__wrap")) {
     var top = document.querySelector(".layout-example__wrap");
 
     if (window.innerWidth <= 1199.98) {
-      // Если ширина экрана <= 768px, перемещаем первый элемент в следующий блок
       if (!bottom.contains(description)) {
         top.removeChild(description);
         bottom.appendChild(description);
       }
     } else if (window.innerWidth > 1199.98) {
-      // Если ширина экрана > 768px, перемещаем второй элемент в предыдущий блок
       if (bottom.contains(description)) {
         bottom.removeChild(description);
         top.appendChild(description);
@@ -392,4 +450,84 @@ if (document.querySelector(".layout-example__wrap")) {
   }
   window.addEventListener("resize", exampleElement);
   window.addEventListener("load", exampleElement);
+}
+/////////////////////////////
+
+if (document.querySelector(".tabs-container")) {
+  document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("tab")) {
+      var tabNumber =
+        Array.from(event.target.parentElement.children).indexOf(event.target) +
+        1;
+      console.log(tabNumber);
+      document
+        .querySelectorAll(".tabs__content")
+        .forEach((content) => content.classList.remove("active"));
+      document
+        .querySelectorAll(".tab")
+        .forEach((tab) => tab.classList.remove("active"));
+
+      document.getElementById(`content${tabNumber}`).classList.add("active");
+      event.target.classList.add("active");
+    }
+  });
+}
+
+if (document.querySelector(".layout-post__banner")) {
+  function sizeBanner() {
+    if (window.innerWidth >= 1199.98) {
+      var scrollingBlock = document.querySelector(".banner");
+      var container = document.querySelector(".layout-post__banner");
+
+      var blockHeight = scrollingBlock.offsetTop;
+      var bannerkHeight = container.clientHeight - scrollingBlock.offsetTop;
+      var isFixed = false;
+
+      window.addEventListener("scroll", function () {
+        var scrollPosition = window.scrollY;
+        // console.log(scrollPosition);
+        // console.log(blockHeight);
+        // console.log(bannerkHeight);
+        if (
+          scrollPosition > blockHeight &&
+          !isFixed &&
+          scrollPosition <= bannerkHeight
+        ) {
+          container.classList.toggle("active");
+          scrollingBlock.style.top = "20";
+          scrollingBlock.style.position = "sticky";
+
+          isFixed = true;
+        } else if (
+          scrollPosition <= (blockHeight && isFixed) ||
+          (scrollPosition >= bannerkHeight && isFixed)
+        ) {
+          scrollingBlock.style.top = "20";
+          scrollingBlock.style.position = "relative";
+
+          isFixed = false;
+          container.classList.toggle("active");
+        }
+      });
+    }
+  }
+  window.addEventListener("resize", sizeBanner);
+  window.addEventListener("load", sizeBanner);
+}
+
+if (document.querySelector(".layout__aside-button")) {
+  document.addEventListener("DOMContentLoaded", function () {
+    var myList = document.querySelector(".layout__aside-list");
+    var showMoreBtn = document.querySelector(".layout__aside-button");
+
+    showMoreBtn.addEventListener("click", function () {
+      myList.classList.toggle("show-third");
+      showMoreBtn.classList.toggle("active");
+      if (document.querySelector(".layout__aside-button.active")) {
+        showMoreBtn.textContent = "Скрыть все";
+      } else {
+        showMoreBtn.textContent = "Показать все";
+      }
+    });
+  });
 }
