@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1 , maximum-scale=1, user-scalable=0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="Avoski">
-    <link rel="stylesheet" href="css/style.min.css?_v=20231222101228">
+    <link rel="stylesheet" href="css/style.min.css?_v=20231226164059">
 
     <link href="img/favicon.png" rel="shortcut icon" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -25,7 +25,7 @@
 
 				</ul>
 				<ul class="header__list">
-					<li class="header__li-dropdown">Примеры парсинга</li>
+					<li class="header__li-dropdown"><a href="#"><span>Примеры парсинга</span></a></li>
 					<li><a href="#">Услуги</a></li>
 					<li><a href="#">О проекте</a></li>
 					<li><a href="#">Блог</a></li>
@@ -767,10 +767,20 @@
 			<form class="layout-form__form" action="#">
 				<h2>Заказать парсинг данных WILDBERRIES</h2>
 				<div class="layout-form__inputs">
-					<input type="text" placeholder="Имя" name="name" required class="layout-form__name">
-					<input type="phone" placeholder="Телефон" name="phone" required class="layout-form__phone">
-					<input type="email" placeholder="E-mail" name="email" required class="layout-form__email">
-
+					<div class="layout-form__valid ">
+						<input type="text" placeholder="Имя" name="name" required class="layout-form__name ">
+						<span class="layout-form__error">Нужно заполнить</span>
+					</div>
+					<div class="layout-form__valid">
+						<input type="phone" placeholder="Телефон" name="phone" required
+							class="layout-form__phone _validation">
+						<span class="layout-form__error">Нужно заполнить</span>
+					</div>
+					<div class="layout-form__valid">
+						<input type="email" placeholder="E-mail" name="email" required
+							class="layout-form__email _validation">
+						<span class="layout-form__error">Нужно заполнить</span>
+					</div>
 				</div>
 				<textarea placeholder="Комментарии" name="comments" class="layout-form__textarea"></textarea>
 				<div class="layout-form__bottom">
@@ -805,10 +815,20 @@
 			<form class="layout-form__form" action="#">
 				<h2>Отправить резюме</h2>
 				<div class="layout-form__inputs">
-					<input type="text" placeholder="Имя" name="name" required class="layout-form__name">
-					<input type="phone" placeholder="Телефон" name="phone" required class="layout-form__phone">
-					<input type="email" placeholder="E-mail" name="email" required class="layout-form__email">
-
+					<div class="layout-form__valid ">
+						<input type="text" placeholder="Имя" name="name" required class="layout-form__name ">
+						<span class="layout-form__error">Нужно заполнить</span>
+					</div>
+					<div class="layout-form__valid">
+						<input type="phone" placeholder="Телефон" name="phone" required
+							class="layout-form__phone _validation">
+						<span class="layout-form__error">Нужно заполнить</span>
+					</div>
+					<div class="layout-form__valid">
+						<input type="email" placeholder="E-mail" name="email" required
+							class="layout-form__email _validation">
+						<span class="layout-form__error">Нужно заполнить</span>
+					</div>
 				</div>
 				<textarea placeholder="Комментарии" name="comments" class="layout-form__textarea"></textarea>
 				<div class="layout-form__file">
@@ -886,8 +906,8 @@
 
     </div>
 
-    <script src="js/swiper-bundle.min.js?_v=20231222101228"></script>
-    <script src="js/script.js?_v=20231222101228"></script>
+    <script src="js/swiper-bundle.min.js?_v=20231226164059"></script>
+    <script src="js/script.js?_v=20231226164059"></script>
 </body>
 
 </html>
