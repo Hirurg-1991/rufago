@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1 , maximum-scale=1, user-scalable=0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="Avoski">
-    <link rel="stylesheet" href="css/style.min.css?_v=20231226164059">
+    <link rel="stylesheet" href="css/style.min.css?_v=20240112165220">
 
     <link href="img/favicon.png" rel="shortcut icon" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -735,7 +735,7 @@
 		</div>
 
 	</div>
-	<div class="modal__pars">
+	<div class="modal__pars modal">
 		<div class="modal-close">
 			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g opacity="0.2" clip-path="url(#clip0_313_1419)">
@@ -780,6 +780,76 @@
 
 					</div>
 				</div>
+			</form>
+		</div>
+	</div>
+	<div class="modal__example modal">
+		<div class="modal-close">
+			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g opacity="0.2" clip-path="url(#clip0_313_1419)">
+					<path
+						d="M8.16773 10.0166L0.379993 2.22871C-0.126764 1.72214 -0.126764 0.90305 0.379993 0.396534C0.88657 -0.110043 1.70566 -0.110043 2.21217 0.396534L10.0001 8.18433L17.7877 0.396534C18.2945 -0.110043 19.1133 -0.110043 19.6199 0.396534C20.1267 0.903111 20.1267 1.72214 19.6199 2.22871L11.8323 10.0166L19.6198 17.8044C20.1266 18.3109 20.1266 19.13 19.6198 19.6365C19.4997 19.7571 19.3569 19.8526 19.1997 19.9178C19.0424 19.9829 18.8739 20.0164 18.7037 20.0162C18.3721 20.0162 18.0403 19.8892 17.7876 19.6365L10.0001 11.8488L2.21217 19.6365C2.092 19.757 1.94921 19.8526 1.792 19.9177C1.63479 19.9829 1.46626 20.0163 1.29608 20.0162C0.964439 20.0162 0.632675 19.8892 0.379993 19.6365C-0.126764 19.13 -0.126764 18.3109 0.379993 17.8044L8.16773 10.0166Z"
+						fill="black"></path>
+				</g>
+				<defs>
+					<clipPath id="clip0_313_1419">
+						<rect width="20" height="20" fill="white" transform="matrix(-1 0 0 1 20 0)"></rect>
+					</clipPath>
+				</defs>
+			</svg>
+		</div>
+		<div class="layout-form__container ">
+			<form class="layout-form__form" action="#">
+				<h2>Получить пример парсинга АфВТОДОК.РУ</h2>
+				<div class="layout-form__inputs">
+					<div class="layout-form__valid ">
+						<input type="text" placeholder="Имя" name="name" required class="layout-form__name ">
+						<span class="layout-form__error">Нужно заполнить</span>
+					</div>
+					<div class="layout-form__valid">
+						<input type="phone" placeholder="Телефон" name="phone" required
+							class="layout-form__phone _validation">
+						<span class="layout-form__error">Нужно заполнить</span>
+					</div>
+					<div class="layout-form__valid">
+						<input type="email" placeholder="E-mail" name="email" required
+							class="layout-form__email _validation">
+						<span class="layout-form__error">Нужно заполнить</span>
+					</div>
+				</div>
+
+				<div class="layout-form__bottom">
+					<button type="submit" class="layout-form__btn">Отправить</button>
+					<div class="layout-form__check">
+						<input type="checkbox" class="layout-form__custom" id="check" name="check" value="yes">
+						<label for="check"><span class="layout-form__text">Я принимаю соглашения об <a
+									href="https://rufago.ru/private-policy/" target="_blank">обработке
+									персональных данных</a></span></label>
+
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="modal__message modal">
+		<div class="modal-close">
+			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g opacity="0.2" clip-path="url(#clip0_313_1419)">
+					<path
+						d="M8.16773 10.0166L0.379993 2.22871C-0.126764 1.72214 -0.126764 0.90305 0.379993 0.396534C0.88657 -0.110043 1.70566 -0.110043 2.21217 0.396534L10.0001 8.18433L17.7877 0.396534C18.2945 -0.110043 19.1133 -0.110043 19.6199 0.396534C20.1267 0.903111 20.1267 1.72214 19.6199 2.22871L11.8323 10.0166L19.6198 17.8044C20.1266 18.3109 20.1266 19.13 19.6198 19.6365C19.4997 19.7571 19.3569 19.8526 19.1997 19.9178C19.0424 19.9829 18.8739 20.0164 18.7037 20.0162C18.3721 20.0162 18.0403 19.8892 17.7876 19.6365L10.0001 11.8488L2.21217 19.6365C2.092 19.757 1.94921 19.8526 1.792 19.9177C1.63479 19.9829 1.46626 20.0163 1.29608 20.0162C0.964439 20.0162 0.632675 19.8892 0.379993 19.6365C-0.126764 19.13 -0.126764 18.3109 0.379993 17.8044L8.16773 10.0166Z"
+						fill="black"></path>
+				</g>
+				<defs>
+					<clipPath id="clip0_313_1419">
+						<rect width="20" height="20" fill="white" transform="matrix(-1 0 0 1 20 0)"></rect>
+					</clipPath>
+				</defs>
+			</svg>
+		</div>
+		<div class="layout-form__container ">
+			<form class="layout-form__form" action="#">
+				<h2>Файл отправлен на почту</h2>
+
 			</form>
 		</div>
 	</div>
@@ -893,8 +963,8 @@
 
     </div>
 
-    <script src="js/swiper-bundle.min.js?_v=20231226164059"></script>
-    <script src="js/script.js?_v=20231226164059"></script>
+    <script src="js/swiper-bundle.min.js?_v=20240112165220"></script>
+    <script src="js/script.js?_v=20240112165220"></script>
 </body>
 
 </html>
